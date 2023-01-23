@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <Title>Book</Title>
+    </head>
+    <body>
+        <center><h1>Book Details</h1></center>
+        <br>
+        <form method="POST" action="/add">
+            {% csrf_token %}
+            <center><h3>Add a Book</h3> </center> 
+            <br>
+            <label>Book Name: {{form.bname}}</label>
+            <br>
+            <label>Book Author: {{form.bid}}</label>
+            <br>
+            <label>Book Description: {{form.bdesc}}</label>
+            <br>
+            <label>Book Price: {{form.bprice}}</label>
+            <br>
+            <br>
+            <button type="submit">Submit</button>
+        </form>
+    </body>
+</html>
+

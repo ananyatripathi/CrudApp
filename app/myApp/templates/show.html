@@ -1,0 +1,61 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <style>
+        table {
+          font-family: arial, sans-serif;
+          border-collapse: collapse;
+          width: 100%;
+        }
+        
+        td, th {
+          border: 1px solid #dddddd;
+          text-align: left;
+          padding: 8px;
+        }
+        
+        tr:nth-child(even) {
+          background-color: #dddddd;
+        }
+        </style>
+    <meta charset="UTF-8">  
+    <title>Employee Records</title>  
+</head>  
+<body> 
+     
+<table class="table table-striped table-bordered table-sm">  
+    <thead class="thead-dark">  
+    <tr>  
+        <th>Book Name</th>  
+        <th>Book Author</th>  
+        <th>Book Description</th> 
+        <th>Book Price</th>  
+        <th>Edit</th> 
+        <th>Delete</th>   
+    </tr>  
+    </thead>  
+    <tbody>  
+{% for book in books %}  
+    <tr>  
+        <td>{{ book.bname }}</td>  
+        <td>{{ book.bid }}</td>  
+        <td>{{ book.bdesc }}</td> 
+        <td>{{ book.bprice }}</td>  
+        <td>  
+            <a href="/edit/{{ book.id }}"><span  >Edit</span></a>  
+            </td>
+            <td>
+            <a href="/remove/{{ book.id }}">Delete</a>  
+        </td>  
+    </tr>  
+{% endfor %}  
+    </tbody>  
+</table>  
+<br>  
+<br>  
+<center>
+    <button>
+        <a style="text-decoration: none;" href="/add">Add New Record</a>
+    </button></center>  
+</body>  
+</html>  
